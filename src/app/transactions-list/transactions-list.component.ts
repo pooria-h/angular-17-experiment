@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { TransactionWithID } from '../../interfaces/BalanceData';
+import { Component, inject } from '@angular/core';
+import { BalanceStore } from '../../store/BalanceStore';
 
 @Component({
   selector: 'app-transactions-list',
@@ -10,5 +10,5 @@ import { TransactionWithID } from '../../interfaces/BalanceData';
 })
 
 export class TransactionsListComponent {
-  @Input() transactions!: TransactionWithID[];
+  readonly store = inject(BalanceStore);
 }

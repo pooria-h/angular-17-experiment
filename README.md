@@ -18,6 +18,7 @@ And in a new terminal:
 
 - Add Components, Add Interfaces, Add mocks, Add Store
 - Add tailwind, Add styles
+- Remove props and Directly connect the components to the store
 - ...
 
 

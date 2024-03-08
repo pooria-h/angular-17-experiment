@@ -1,11 +1,11 @@
 <div class="p-5 shadow-md accountInfo">
     <div class="mb-2">
-        <b>Account holder: </b><span>{{ account.name }}</span>
+        <b>Account holder: </b><span>{{ store.account().name }}</span>
     </div>
     <div class="mb-2">
-        <b>IBAN: </b><span>{{ account.iban }}</span>
+        <b>IBAN: </b><span>{{ store.account().iban }}</span>
     </div>
     <div class="mb-2">
-        <b>Balance: </b><span>{{ account.balance }}</span><i class="ml-1">{{ currency }}</i>
+        <b>Balance: </b><span>{{ store.account().balance }}</span><i class="ml-1">{{ store.currency() }}</i>
     </div>
 </div>
