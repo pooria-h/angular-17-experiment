@@ -1,5 +1,5 @@
-import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
-import { inject } from '@angular/core';
+import { signalStore, withState, withMethods, withComputed, patchState } from '@ngrx/signals';
+import { inject, computed } from '@angular/core';
 import { Account, BalanceData, TransactionWithID } from '../interfaces/BalanceData';
 import { BalanceService } from '../services/BalanceService';
 import { transactionsWithIDs } from '../services/TransactionsFormatter';
@@ -13,18 +13,16 @@ const initialState = {
   currency: '' as string,
   transactions: [] as TransactionWithID[],
   isFetched: false,
-  hasErrors: false,
   error: '' as string
 };
 
 export const BalanceStore = signalStore(
   withState(initialState),
-  // TODO: Finding a workaround to make "hasErrors" computed property reactive!
-  // withComputed(({ error }) => ({
-  //   hasErrors: computed(() => {
-  //     return error.length > 0;
-  //   }),
-  // })),
+  withComputed(({ error }) => ({
+    hasErrors: computed(() => {
+      return error().length > 0;
+    }),
+  })),
   withMethods((
     store,
     balanceService = inject(BalanceService)) => ({
@@ -43,7 +41,6 @@ export const BalanceStore = signalStore(
       patchState(store, {
         error,
         isFetched: true,
-        hasErrors: true
       });
     },
     async fetchBalance() {
