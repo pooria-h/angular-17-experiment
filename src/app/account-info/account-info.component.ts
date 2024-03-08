@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { Account } from '../../interfaces/BalanceData';
 import { BalanceStore } from '../../store/BalanceStore';
 
 @Component({
