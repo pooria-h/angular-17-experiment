@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (transaction of transactions; track transaction.id) {
+      <tr>
+        <td>{{ transaction.date }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.from || '---' }}</td>
+        <td>{{ transaction.to || '---' }}</td>
+        <td>{{ transaction.description }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
