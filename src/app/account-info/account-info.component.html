@@ -1,4 +1,11 @@
-<p>{{ account.name }}</p>
-<p>{{ account.iban }}</p>
-<p>{{ account.balance }}</p>
-<p>{{ currency }}</p>
+<div class="p-5 shadow-md accountInfo">
+    <div class="mb-2">
+        <b>Account holder: </b><span>{{ account.name }}</span>
+    </div>
+    <div class="mb-2">
+        <b>IBAN: </b><span>{{ account.iban }}</span>
+    </div>
+    <div class="mb-2">
+        <b>Balance: </b><span>{{ account.balance }}</span><i class="ml-1">{{ currency }}</i>
+    </div>
+</div>

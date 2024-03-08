@@ -17,6 +17,7 @@ And in a new terminal:
 ## Commits
 
 - Add Components, Add Interfaces, Add mocks, Add Store
+- Add tailwind, Add styles
 - ...
 
 
